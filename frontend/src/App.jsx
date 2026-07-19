@@ -91,9 +91,9 @@ export default function App() {
 
       <section className="hero-strip">
         <div>
-          <p className="eyebrow">Hackathon-ready use case</p>
-          <h2>Emergency intake support for overloaded clinics</h2>
-          <p>One narrow problem, one clear user, one visible AI workflow. Judges can understand the product in under two minutes.</p>
+          <p className="eyebrow">CLINIC TRIAGE SUPPORT</p>
+          <h2>Emergency intake support for busy clinics</h2>
+          <p>Capture symptoms, identify urgent warning signs, and generate a clear handoff note for the clinician.</p>
         </div>
         <div className={`status-pill ${statusTone}`}>{backendState}</div>
       </section>
