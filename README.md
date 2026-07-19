@@ -1,25 +1,39 @@
 # TriageBridge
 
-AI-powered emergency intake support for overloaded clinics.
+AI-powered emergency intake support for busy clinics.
 
 ## Live Links
 
-- **Frontend:** https://triagebridge-pi1z814nl-nxt-wave-academy.vercel.app/
-- **Backend:** https://triagebridge-backend.onrender.com/
-- **Demo Video:** https://YOUR-DEMO-VIDEO-LINK
+- **Frontend:** https://triagebridge-cc4ifljsl-nxt-wave-academy.vercel.app/
+- **Backend:** https://triagebridge-backend.onrender.com
+- **Demo Video:** https://drive.google.com/file/d/1S45qbIL9y248yIFBoW6WntY1SQH5lkYw/view?usp=drive_link
 
 ---
 
-## Problem Statement
+## Overview
 
-In busy clinics and emergency desks, the first patient description is often captured as unstructured text by non-clinical or semi-clinical staff. Important warning signs such as chest pain, low oxygen, slurred speech, altered consciousness, or severe bleeding can be missed or delayed because they are buried inside free-text intake notes.
+TriageBridge helps clinic staff turn unstructured patient complaints into a clear urgency result, red-flag summary, and clinician-ready handoff note. It is designed for one focused use case: helping overloaded clinics process first-level intake faster and more consistently.
 
-This creates three major issues:
-- delayed escalation for high-risk cases
-- inconsistent handoff to clinicians
-- slower decision-making during patient overload
+---
 
-TriageBridge solves this by converting raw intake information into urgency level, red flags, vitals alerts, and a clinician-ready summary.
+## Problem
+
+In many clinics, the first patient complaint is captured as free text at the front desk or during initial intake. Important warning signs can be missed because symptoms, vitals, and risk clues are buried in a messy description. This slows down escalation, creates inconsistent handoff, and makes emergency intake harder during busy hours.
+
+---
+
+## Solution
+
+TriageBridge analyzes patient intake details and complaint text to produce:
+
+- urgency level
+- risk score
+- red flags
+- vitals alerts
+- suggested pathway
+- clinician-ready handoff summary
+
+The goal is to support staff during first-level screening and make escalation faster, clearer, and more consistent.
 
 ---
 
@@ -29,75 +43,42 @@ TriageBridge solves this by converting raw intake information into urgency level
 
 ---
 
-## Target User
+## Target Users
 
-- Reception staff in clinics
-- Front-desk health workers
+- Clinic reception staff
+- Front-desk intake staff
 - Triage support staff
 - Small hospital intake teams
 
 ---
 
-## Solution Overview
+## Key Features
 
-TriageBridge is a focused emergency intake web app that helps staff process a patient complaint quickly. The user enters symptoms, duration, vitals, and short notes. The system analyzes the input and produces:
-
-- urgency result
-- risk score
-- red flags
-- vitals alerts
-- suggested pathway
-- clinician handoff summary
-
-The goal is not to replace doctors. The goal is to help clinics identify risk faster and make handoff clearer.
-
----
-
-## Why this solution matters
-
-Most healthcare demo ideas become too broad. TriageBridge is intentionally narrow and solves one real workflow extremely well: emergency intake support. This makes it easier to understand, easier to demo, and more useful for a hackathon judging round where clarity and execution matter.
-
----
-
-## Core Features
-
-- Natural-language patient complaint input
+- Complaint-based patient intake
 - AI-assisted triage signal extraction
-- Risk score generation
-- Urgency classification
+- Urgency scoring
 - Red-flag detection
-- Vitals-based alerting
-- Suggested clinical pathway
-- Clinician-ready handoff note
+- Vitals-aware alerts
+- Suggested care pathway
+- Handoff summary generation
 - Sample cases for quick demo
-- Frontend fallback mode for resilient demo experience
+- Live deployed full-stack setup
 
 ---
 
-## AI Component
+## AI Role
 
-The AI is part of the core product logic, not just a chatbot wrapper.
-
-TriageBridge uses AI-assisted analysis to transform unstructured patient intake text into structured triage signals. These signals are then used to identify red flags, classify urgency, and generate a short handoff summary.
-
-### AI responsibilities
-
-- extract symptom clues from free text
-- identify high-risk patterns
-- structure the complaint into actionable triage information
-- support urgency scoring and explanation
-
-This makes the AI central to the product’s value.
+The AI is central to the product workflow. Instead of acting like a basic chatbot, it helps convert raw patient complaint text into structured triage signals that can be used to identify risk, classify urgency, and generate a readable clinical summary.
 
 ---
 
 ## How It Works
 
-1. A staff member enters a patient complaint and intake details.
+1. A staff member enters patient details, complaint text, and basic intake information.
 2. The frontend sends the case to the backend API.
-3. The backend analyzes the complaint and extracts triage signals.
-4. The backend returns urgency, risk indicators, and summary output.
-5. The frontend displays the result in a simple judge-friendly interface.
+3. The backend analyzes the input and extracts triage signals.
+4. The system returns urgency, alerts, red flags, and a short handoff note.
+5. The frontend presents the result in a clean and readable format.
 
 ---
 
@@ -105,9 +86,9 @@ This makes the AI central to the product’s value.
 
 - Chest pain with low oxygen
 - Possible stroke presentation
-- Moderate fever with stable vitals
+- Fever with stable vitals
 
-These sample cases are included to make the demo quick and reliable.
+These cases are included in the app so the product can be demonstrated quickly and reliably.
 
 ---
 
@@ -133,19 +114,17 @@ These sample cases are included to make the demo quick and reliable.
 
 ## Project Structure
 
-```text
-triagebridge/
-├── frontend/
-│   ├── src/
-│   ├── public/
-│   ├── package.json
-│   └── vite.config.js
-├── backend/
-│   ├── main.py
-│   ├── requirements.txt
-│   └── triage logic files
-└── README.md
-```
+    triagebridge/
+    ├── frontend/
+    │   ├── src/
+    │   ├── public/
+    │   ├── package.json
+    │   └── vite.config.js
+    ├── backend/
+    │   ├── main.py
+    │   ├── requirements.txt
+    │   └── triage logic files
+    └── README.md
 
 ---
 
@@ -241,7 +220,7 @@ VITE_API_BASE_URL = https://triagebridge-backend.onrender.com
 Configure:
 
 ```bash
-ALLOWED_ORIGIN = https://triagebridge-pi1z814nl-nxt-wave-academy.vercel.app/
+ALLOWED_ORIGIN = https://triagebridge-cc4ifljsl-nxt-wave-academy.vercel.app
 ```
 
 ## Future Improvements
